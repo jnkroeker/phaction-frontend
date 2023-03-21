@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "title": "CrossFit title",
+        "date": "2023-03-21",
+        "category": "CrossFit",
+        "source": "link to CrossFit video",
+        "image": "./crossfit.jgp",
+        "lead": "lead paragraph",
+        "content": "Text content of the post"
+    },
+    {
+        "id": 2,
+        "title": "CrossFit title",
+        "date": "2023-03-21",
+        "category": "CrossFit",
+        "source": "link to CrossFit video",
+        "image": "./crossfit.jpg",
+        "lead": "lead paragraph",
+        "content": "Text content of the post"
+    },
+    {
+        "id": 3,
+        "title": "CrossFit title",
+        "date": "2023-03-21",
+        "category": "CrossFit",
+        "source": "link to CrossFit video",
+        "image": "./crossfit.jpg",
+        "lead": "lead paragraph",
+        "content": "Text content of the post"
+    },
+    {
+        "id": 4,
+        "title": "Skiing title",
+        "date": "2023-03-20",
+        "category": "Skiing",
+        "source": "link to skiing video",
+        "image": "./skiing.jpg",
+        "lead": "lead paragraph",
+        "content": "Text content of the post"
+    },
+    {
+        "id": 5,
+        "title": "Skiing title",
+        "date": "2023-03-20",
+        "category": "Skiing",
+        "source": "link to skiing video",
+        "image": "./skiing.jpg",
+        "lead": "lead paragraph",
+        "content": "Text content of the post"
+    },
+    {
+        "id": 6,
+        "title": "Skiing title",
+        "date": "2023-03-20",
+        "category": "Skiing",
+        "source": "link to skiing video",
+        "image": "./skiing.jpg",
+        "lead": "lead paragraph",
+        "content": "Text content of the post"
+    },
+    {
+        "id": 7,
+        "title": "Cycling title",
+        "date": "2023-03-20",
+        "category": "Cycling",
+        "source": "link to cycling video",
+        "image": "./gravel.jpeg",
+        "lead": "lead paragraph",
+        "content": "Text content of the post"
+    },
+    {
+        "id": 8,
+        "title": "Cycling title",
+        "date": "2023-03-20",
+        "category": "Cycling",
+        "source": "link to cycling video",
+        "image": "./gravel.jpeg",
+        "lead": "lead paragraph",
+        "content": "Text content of the post"
+    },
+    {
+        "id": 9,
+        "title": "Cycling title",
+        "date": "2023-03-20",
+        "category": "Cycling",
+        "source": "link to cycling video",
+        "image": "./gravel.jpeg",
+        "lead": "lead paragraph",
+        "content": "Text content of the post"
+    }
+]
