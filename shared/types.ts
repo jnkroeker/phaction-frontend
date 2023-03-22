@@ -15,3 +15,15 @@ export type Post = {
     image: UriString
     source: UriString
 }
+
+export type Person = string
+export type RelativeTime = string
+export type Comment = {
+    id: EntityId
+    author: Person
+    content: string
+    time: RelativeTime
+    post: EntityId
+}
+
+export type Optional<TEntity> = TEntity | null

@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { Post, Category } from "@/components/shared/types"
+import { Post, Category } from "@/shared/types"
 import { Feed } from "../components/Feed"
 import { fetchPosts, fetchCategories } from "../api/summary"
 

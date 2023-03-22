@@ -1,5 +1,5 @@
 import { Section } from "../Section";
-import { Post, Category } from "../shared/types";
+import { Post, Category } from "../../shared/types";
 
 type FeedProps = {
     posts: Post[]

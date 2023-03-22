@@ -1,5 +1,5 @@
 import fetch from "node-fetch"
-import { Post, Category } from "@/components/shared/types"
+import { Post, Category } from "@/shared/types"
 import { config } from "./config"
 
 // When Next builds a project, it runs outside of the browser environment, where it

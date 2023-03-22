@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Post } from '../shared/types'
+import { Post } from '../../shared/types'
 import { Card, Figure, Title, Excerpt } from "./PostCardStyle"
 
 type PostCardProps = {

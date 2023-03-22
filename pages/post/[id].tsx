@@ -1,20 +1,43 @@
-import { useRouter } from "next/router";
+import { NextPage } from "next";
+import { useSelector } from "react-redux";
+import { Comments } from "@/components/Comments";
+import { fetchPost } from "@/api/posts";
+import { Loader } from "@/components/Loader";
+import { PostBody } from "@/components/Post/PostBody";
+import { fetchComments } from "@/api/comments/fetch";
+import { State, store } from "@/store";
+import { CommentsState, UPDATE_COMMENTS_ACTION } from "@/store/comments";
+import { PostState, UPDATE_POST_ACTION } from "@/store/posts"
 
-const Post = () => {
+export const getServerSideProps = store.getServerSideProps(
+    (store) =>
+        async ({ params }) => {
+            if (!params || typeof params.id !== "string") {
+                throw new Error("Unexpected Id")
+            }
 
-    // useRouter hook provides access to the router object
-    // pathname is the path of the page in the pages directory
-    // query is a query string containing the id of the current post,
-    // later to be used for data loading
+            const comments = await fetchComments(params.id)
+            const post = await fetchPost(params.id)
 
-    const { pathname, query } = useRouter()
+            store.dispatch({ type: UPDATE_POST_ACTION, post })
+            store.dispatch({ type: UPDATE_COMMENTS_ACTION, comments })
 
-    return (
-        <div>
-            Pathname: {pathname};<br/>
-            Post Id: {query.id}
-        </div>
-    )
+            return null as any
+        }
+)
+
+const Post: NextPage = ()  => {
+    const post = useSelector<State, PostState>(({ post }) => post)
+    const comments = useSelector<State, CommentsState>(({ comments }) => comments )
+
+    if (!post) return <Loader/>
+    return(
+        <>
+            <PostBody post={post}/>
+            <Comments comments={comments} post={post.id}/>
+        </>
+    )  
+        
 }
 
 export default Post

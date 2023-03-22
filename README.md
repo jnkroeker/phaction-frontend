@@ -32,3 +32,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
         in order to run a local express API server to 'hydrate' my Server-Side Rendered pages.
 
         TODO: use my Khyme API to hydrate pages.
+
+03-22-2023
+
+    Added Redux to project with next-redux-wrapper package

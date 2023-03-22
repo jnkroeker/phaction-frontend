@@ -4,9 +4,10 @@ import { ThemeProvider } from "styled-components"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { Center } from "../components/Center"
-import { GlobalStyle, theme } from "@/components/shared/theme"
+import { GlobalStyle, theme } from "@/shared/theme"
+import { store } from "@/store"
 
-export default function MyApp({ Component, pageProps }: any) {
+function MyApp({ Component, pageProps }: any) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle theme={theme} />
@@ -24,3 +25,5 @@ export default function MyApp({ Component, pageProps }: any) {
     </ThemeProvider>
   )
 }
+
+export default store.withRedux(MyApp)
