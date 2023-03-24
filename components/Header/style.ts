@@ -25,3 +25,21 @@ export const Logo = styled.h1`
     a:hover {
         color: yellow;
     }`
+
+export const Form = styled.form`
+button {
+    border: 0;
+    font-size: 1rem;
+    padding: 8px 20px;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.035),
+      0 4px 25px rgba(0, 0, 0, 0.07);
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.035),
+        0 6px 35px rgba(0, 0, 0, 0.2);
+    }
+  }`

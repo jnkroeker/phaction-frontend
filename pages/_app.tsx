@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: any) {
     <ThemeProvider theme={theme}>
       <GlobalStyle theme={theme} />
       <Head>
-        <title>What's Next?!</title>
+        <title>Empowering the Quantified Self Community</title>
       </Head>
 
       <Header />

@@ -8,7 +8,7 @@ type FrontProps = {
   categories: Category[]
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const categories = await fetchCategories()
   const posts = await fetchPosts()
   return { props: { posts, categories } }

@@ -36,3 +36,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 03-22-2023
 
     Added Redux to project with next-redux-wrapper package
+
+03-23-2023 
+
+    Added a Dockerfile because I am working on running this in a K8s pod with the Khyme API.
+
+    Khyme API at this time accepts POST requests on :3000/tasks and requires just a string attribute called "url" in the body.
