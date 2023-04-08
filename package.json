@@ -1,6 +1,6 @@
 {
   "name": "phaction-frontend",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "dev": "concurrently --kill-others \"npm run serve\" \"next dev\"",

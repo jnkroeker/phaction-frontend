@@ -4,18 +4,9 @@
 npm run dev
 ```
 
-### Learn More
+### Important Notes
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-### Deploy on Vercel
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You will need to change the URL in /api/tasks/fetch.ts each time the k8s cluster and related Static External IP are rebuilt.
 
 ### Development Log
 
@@ -41,4 +32,24 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
     Added a Dockerfile because I am working on running this in a K8s pod with the Khyme API.
 
-    Khyme API at this time accepts POST requests on :3000/tasks and requires just a string attribute called "url" in the body.
+    Khyme API at this time accepts POST requests on :3001/tasks and requires just a string attribute called "url" in the body.
+
+03-26-2023
+
+    Deploy frontend with api inside the same pod. Keep in mind here that the javascript actually executes inside the user's     
+      
+       browser, not inside the cluster. Currently working on allowing external traffic into the cluster.
+
+04-08-2023
+
+    Successfully getting traffic into the cluster. 
+
+    You must stand up all gcloud infrastructure following kubernetes-terraform project and 
+        
+        deploy/configure khyme and database pryor to deploying frontend witht he yaml files in this project.
+
+    Dockerfile exposes port 3002 so once deployed (frontend again separated into its own pod) execute
+    
+        `kubectl port-forward <frontend pod name> 3000:3002 --namespace=khyme-system`
+
+    Open Chrome browser to localhost:3000/ and click 'Get Tasks' button to see data returned in network tab.
