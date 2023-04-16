@@ -43,3 +43,27 @@ button {
         0 6px 35px rgba(0, 0, 0, 0.2);
     }
   }`
+
+  export const Row = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    &:after {
+        content: "";
+        flex: auto;
+    }
+    
+    &:after,
+    & > * {
+        width: calc(15% - 10px);
+        margin-bottom: 20px;
+    }
+    
+    @media (max-width: 800px) {
+        &:after,
+        & > * {
+            width: 100%
+        }
+    }
+`
