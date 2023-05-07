@@ -53,3 +53,7 @@ You will need to change the URL in /api/tasks/fetch.ts each time the k8s cluster
         `kubectl port-forward <frontend pod name> 3000:3002 --namespace=khyme-system`
 
     Open Chrome browser to localhost:3000/ and click 'Get Tasks' button to see data returned in network tab.
+
+05-07-2023
+
+    Design decision made to embed video in PostBody
