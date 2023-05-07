@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import dynamic from "next/dynamic";
 import { useSelector } from "react-redux";
 import { Comments } from "@/components/Comments";
 import { fetchPost } from "@/api/posts";
@@ -29,6 +30,15 @@ export const getServerSideProps = store.getServerSideProps(
 const Post: NextPage = ()  => {
     const post = useSelector<State, PostState>(({ post }) => post)
     const comments = useSelector<State, CommentsState>(({ comments }) => comments )
+
+    // disable server-side rendering for PostBody because dashjs 
+    // is dependent on the browser's window API to work
+    // which is not available on the server side
+    const PostBody = dynamic(() => import('../../components/Post/PostBody').then((res) => res.PostBody),
+        {
+            ssr: false
+        }
+    )
 
     if (!post) return <Loader/>
     return(

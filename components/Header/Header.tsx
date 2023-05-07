@@ -4,9 +4,9 @@ import React, { FormEvent } from "react"
 // import { submitTask } from "@/api/tasks/submit"
 import { Center } from "../Center"
 import { Container, Logo } from "./style"
-import { Form } from "./style"
+import { Form, Row } from "./style"
 
-async function submit(e: FormEvent<HTMLFormElement>) {
+async function submitTasks(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
     /* TODO: SET UP A POST HANDLER IN NGINX TO HIT KHYME-API POST ENDPOINT */
@@ -17,18 +17,21 @@ async function submit(e: FormEvent<HTMLFormElement>) {
 
     console.log(tasks)
 
-  }
+}
 
 export const Header = () => {
     return (
         <Container>
             <Center>
-                <Logo>
-                    <Link href="/">
-                        Phaction
-                    </Link>
-                </Logo>
-                <Form onSubmit={submit}><button>Get Tasks</button></Form>
+                <Row>
+                    <Logo>
+                        <Link href="/">
+                            Phaction
+                        </Link>
+                    </Logo>
+                    <Form onSubmit={submitTasks}><button>Get Tasks</button></Form>
+                    <Form><Link href="/upload"><button>Upload Files</button></Link></Form>
+                </Row>
             </Center>
         </Container>
     )
