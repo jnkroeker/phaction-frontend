@@ -1,7 +1,7 @@
 import Head from "next/head"
 import { Post, Category } from "@/shared/types"
-import { Feed } from "../components/Feed"
 import { fetchPosts, fetchCategories } from "../api/summary"
+import { Grid } from "../components/Grid"
 
 type FrontProps = {
   posts: Post[]
@@ -15,14 +15,15 @@ export async function getServerSideProps() {
 }
 
 export default function Front({ posts, categories }: FrontProps) {
+  
   return (
     <>
       <Head>
-        <title>Front page of the Internet</title>
+        <title>The Quantified Self App</title>
       </Head>
 
       <main>
-        <Feed posts={posts} categories={categories} />
+        <Grid posts={posts} categories={categories}/>
       </main>
     </>
   )
