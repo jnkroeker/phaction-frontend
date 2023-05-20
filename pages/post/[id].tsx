@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { Comments } from "@/components/Comments";
 import { fetchPost } from "@/api/posts";
 import { Loader } from "@/components/Loader";
-import { PostBody } from "@/components/Post/PostBody";
 import { fetchComments } from "@/api/comments/fetch";
 import { State, store } from "@/store";
 import { CommentsState, UPDATE_COMMENTS_ACTION } from "@/store/comments";
