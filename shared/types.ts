@@ -27,3 +27,8 @@ export type Comment = {
 }
 
 export type Optional<TEntity> = TEntity | null
+
+export type Option = {
+    readonly value: string;
+    readonly label: string;
+}

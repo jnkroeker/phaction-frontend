@@ -1,4 +1,4 @@
-import { Figure } from "./style"
+import { Button } from "./style"
 
 type SourceProps = {
     image: string
@@ -6,8 +6,8 @@ type SourceProps = {
 
 export const Source = ({ image }: SourceProps) => {
     return (
-        <Figure>
+        <Button>
             <img src={image}/>
-        </Figure>
+        </Button>
     )
 }

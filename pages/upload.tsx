@@ -45,7 +45,7 @@ const Upload = () => {
         />
         <br/>
         <br/>
-        <div>We can also fetch data for you from the following sites with your permission.</div>
+        <div>We can fetch data automatically from the following sites with your permission.</div>
         <br/>
         <br/>
         <Source image="./strava.png"/>

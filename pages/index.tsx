@@ -1,28 +1,31 @@
 import Head from "next/head"
-import { Post, Category } from "@/shared/types"
-import { Feed } from "../components/Feed"
+import { Option, Post, Category } from "@/shared/types"
 import { fetchPosts, fetchCategories } from "../api/summary"
+import { Grid } from "../components/Grid"
 
 type FrontProps = {
   posts: Post[]
   categories: Category[]
+  options: Option[]
 }
 
 export async function getServerSideProps() {
-  const categories = await fetchCategories()
   const posts = await fetchPosts()
-  return { props: { posts, categories } }
+  const options = [{label: 'CrossFit', value: 'crossfit'}, {label: 'Cycling', value: 'cycling'}, {label: 'Skiing', value: 'skiing'}]
+  const categories = await fetchCategories()
+  return { props: { posts, categories, options } }
 }
 
-export default function Front({ posts, categories }: FrontProps) {
+export default function Front({ posts, categories, options }: FrontProps) {
+  
   return (
     <>
       <Head>
-        <title>Front page of the Internet</title>
+        <title>The Quantified Self App</title>
       </Head>
 
       <main>
-        <Feed posts={posts} categories={categories} />
+        <Grid posts={posts} categories={categories} options={options}/>
       </main>
     </>
   )
