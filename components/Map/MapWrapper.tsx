@@ -28,8 +28,8 @@ export const MapWrapper = ({features}: MapProps) => {
 
     // create state ref that can be accessed in OpenLayers onclick callback function
     //  https://stackoverflow.com/a/60643670
-    const mapRef = useRef<{}>();
-    mapRef.current = map;
+    const mapRef = useRef<Map>();
+    // mapRef.current = map;
 
     const style = {
         'Point': new Style({
@@ -78,7 +78,8 @@ export const MapWrapper = ({features}: MapProps) => {
         const webMercator = fromLonLat(leesburg);
 
         // create map
-        const initialMap = new Map({
+        if (mapElement.current && !mapRef.current) {
+          mapRef.current = new Map({
             target: mapElement.current!,
             layers: [
             // Google Maps Terrain
@@ -96,12 +97,12 @@ export const MapWrapper = ({features}: MapProps) => {
             zoom: 17
             }),
             controls: []
-        });
+          });
 
-        // save map and vector layer references to state
-        setMap(initialMap);
-        setFeaturesLayer(initalFeaturesLayer);
-
+          // save map and vector layer references to state
+          // setMap(initialMap);
+          // setFeaturesLayer(initalFeaturesLayer);
+        }
     }, []);
 
     // update map if features prop changes - logic formerly put into componentDidUpdate

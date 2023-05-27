@@ -20,6 +20,7 @@ function CustomSelect<
             <>
                 <ReactSelect
                 {...props}
+                instanceId={'random-uniq-id'}
                 theme={(theme) => ({...theme, borderRadius: 0})}
                 />
             </>            

@@ -5,7 +5,7 @@ import { Search } from "../Search";
 import { Feed } from "../Feed";
 import { Post, Category, Option } from "@/shared/types";
 import dynamic from "next/dynamic";
-import { MapWrapper } from "../Map/MapWrapper";
+// import { MapWrapper } from "../Map/MapWrapper";
 
 const GridLayout = WidthProvider(RGL);
 
