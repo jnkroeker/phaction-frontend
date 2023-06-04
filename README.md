@@ -57,3 +57,7 @@ You will need to change the URL in /api/tasks/fetch.ts each time the k8s cluster
 05-07-2023
 
     Design decision made to embed video in PostBody
+
+06-04-2023
+
+    Highlight a GPX on hover

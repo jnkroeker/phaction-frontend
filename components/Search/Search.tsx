@@ -1,11 +1,11 @@
 import ReactSelect, { Props, GroupBase } from "react-select";
 import {useState} from "react";
 import { Button } from "./style";
-import { Option } from "@/shared/types";
+import { Category, Option } from "@/shared/types";
 
 type searchProps = {
     assetTypes: Option[];
-    submitSearchFields: (fields: string[]) => void;
+    submitSearchFields: (fields: Category[]) => void;
 }
 /*
  * TODO: Move to reusable component library
@@ -20,6 +20,7 @@ function CustomSelect<
             <>
                 <ReactSelect
                 {...props}
+                instanceId={'random-uniq-id'}
                 theme={(theme) => ({...theme, borderRadius: 0})}
                 />
             </>            
@@ -31,11 +32,12 @@ export const Search = ({ assetTypes, submitSearchFields }: searchProps) => {
     const [selectedAssetTypes, setSelectedAssetTypes] = useState<string[]>([])
 
     const submitQuery = () => {
-        submitSearchFields(selectedAssetTypes)
+        var selected = selectedAssetTypes as Category[]
+        submitSearchFields(selected)
     }
 
     const onInputChange = (values: Option[]) => {
-        const selected = values.map(v => v.value);
+        const selected = values.map(v => v.label);
         setSelectedAssetTypes(selected);
     }
 
