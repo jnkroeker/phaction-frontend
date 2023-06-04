@@ -5,7 +5,6 @@ import { Search } from "../Search";
 import { Feed } from "../Feed";
 import { Post, Category, Option } from "@/shared/types";
 import dynamic from "next/dynamic";
-// import { MapWrapper } from "../Map/MapWrapper";
 
 const GridLayout = WidthProvider(RGL);
 
@@ -31,13 +30,16 @@ export const Grid = ({posts, categories, options, className="layout", isDraggabl
 
     const [layoutState, setLayoutState] = useState<Layout[]>([]);
 
+    const [filteredCategories, setFilteredCategories] = useState<Category[]>(categories);
+
     useEffect(() => {
         const layout: Layout[] = grid;
         setLayoutState(layout);
     }, [])
 
-    const performQuery = (fields: string[]) => {
+    const performQuery = (fields: Category[]) => {
         console.log(fields)
+        setFilteredCategories(fields)
     }
 
     // disable server-side rendering for MapWrapper because Open Layers 
@@ -65,7 +67,7 @@ export const Grid = ({posts, categories, options, className="layout", isDraggabl
                 <Search assetTypes={options} submitSearchFields={performQuery}/>
             </div>
             <div key='results-container'>
-                <Feed posts={posts} categories={categories} />
+                <Feed posts={posts} categories={filteredCategories} />
             </div>
         </GridLayout>
     )
